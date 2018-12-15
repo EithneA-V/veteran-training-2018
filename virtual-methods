@@ -1,0 +1,29 @@
+#include <iostream>
+
+class RubberDuck {
+    public:
+      void ducky() {
+          std::cout << "I'm cool cause I help debug code - said the rubber duck" << std::endl;
+      }
+      virtual void bird() {
+          std::cout << "I steal food" << std::endl;
+      } 
+};
+
+class RealBird : public RubberDuck {
+    public: 
+      void bird() {
+          std::cout << "I'm loud and obnoxious and mean - said the real bird" << std::endl;
+      }
+};
+
+int main() { 
+    RubberDuck *p;
+    RealBird realbird;
+    p = &realbird;
+    
+    p->ducky(); //outputs "I'm cool cause I help debug code - said the rubber duck"
+    p->bird(); //outputs "I'm loud and obnoxious and mean - said the real bird
+    
+    return 0;
+}
