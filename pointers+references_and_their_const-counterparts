@@ -1,0 +1,28 @@
+#include <iostream>
+
+int f = 4;
+
+int something(const int &val) {
+    int other_val = val;
+    other_val = other_val * 2;
+    return other_val;
+}
+int main() {
+    int a = 1;
+    int *b = &a;
+    *b = 2; 
+    
+    std::cout << a << std::endl; // uses pointers
+    
+    int c = 5;
+    int &d = c;
+    d = 10;
+    
+    std::cout << c << std::endl;// uses references
+    
+    int p = something(f); /* calling function something setting const int &val to f and running f through the function
+                          val is now f */
+    
+    std::cout << p << std::endl; 
+    
+}
