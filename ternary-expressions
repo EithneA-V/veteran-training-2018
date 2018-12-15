@@ -1,0 +1,11 @@
+//int (bool x) {
+// if(x) {
+//  return 1;
+// } else {
+//   return 2;
+// }
+//}
+
+int (bool x) {
+  return x ? 1 : 2;
+} //this works for any if else statement, I'm just lazy and lack imagination
